@@ -13,10 +13,10 @@
             <link>https://your-docusaurus-test-site.com/my-documents/blog/个人简介</link>
             <guid>个人简介</guid>
             <pubDate>Sat, 30 Jul 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[2014年毕业于四川理工学院电子信息工程专业,2017年从事Java开发工作，5年工作经验]]></description>
-            <content:encoded><![CDATA[<p>2014年毕业于四川理工学院电子信息工程专业,2017年从事Java开发工作，5年工作经验</p>]]></content:encoded>
-            <category>hola</category>
-            <category>docusaurus</category>
+            <description><![CDATA[2014年毕业于四川理工学院电子信息工程专业,2017年从事Java开发工作,5年工作经验]]></description>
+            <content:encoded><![CDATA[<p>2014年毕业于四川理工学院电子信息工程专业,2017年从事Java开发工作,5年工作经验</p>]]></content:encoded>
+            <category>个人</category>
+            <category>信息</category>
         </item>
         <item>
             <title><![CDATA[Welcome]]></title>
