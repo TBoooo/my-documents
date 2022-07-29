@@ -2,11 +2,25 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://your-docusaurus-test-site.com/my-documents/blog</id>
     <title>My Documents Blog</title>
-    <updated>2021-08-26T00:00:00.000Z</updated>
+    <updated>2022-07-30T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://your-docusaurus-test-site.com/my-documents/blog"/>
     <subtitle>My Documents Blog</subtitle>
     <icon>https://your-docusaurus-test-site.com/my-documents/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[个人信息]]></title>
+        <id>个人简介</id>
+        <link href="https://your-docusaurus-test-site.com/my-documents/blog/个人简介"/>
+        <updated>2022-07-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[2014年毕业于四川理工学院电子信息工程专业,2017年从事Java开发工作，5年工作经验]]></summary>
+        <content type="html"><![CDATA[<p>2014年毕业于四川理工学院电子信息工程专业,2017年从事Java开发工作，5年工作经验</p>]]></content>
+        <author>
+            <name>Yue Haibo</name>
+            <uri>https://github.com/wgao19</uri>
+        </author>
+        <category label="hola" term="hola"/>
+        <category label="docusaurus" term="docusaurus"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>welcome</id>

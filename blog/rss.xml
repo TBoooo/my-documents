@@ -4,10 +4,20 @@
         <title>My Documents Blog</title>
         <link>https://your-docusaurus-test-site.com/my-documents/blog</link>
         <description>My Documents Blog</description>
-        <lastBuildDate>Thu, 26 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 30 Jul 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[个人信息]]></title>
+            <link>https://your-docusaurus-test-site.com/my-documents/blog/个人简介</link>
+            <guid>个人简介</guid>
+            <pubDate>Sat, 30 Jul 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[2014年毕业于四川理工学院电子信息工程专业,2017年从事Java开发工作，5年工作经验]]></description>
+            <content:encoded><![CDATA[<p>2014年毕业于四川理工学院电子信息工程专业,2017年从事Java开发工作，5年工作经验</p>]]></content:encoded>
+            <category>hola</category>
+            <category>docusaurus</category>
+        </item>
         <item>
             <title><![CDATA[Welcome]]></title>
             <link>https://your-docusaurus-test-site.com/my-documents/blog/welcome</link>
