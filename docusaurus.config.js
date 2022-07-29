@@ -69,23 +69,27 @@ const config = {
             position: 'left',
             label: '笔记',
           },
-          // {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
+          {to: '/blog', label: '简历', position: 'left'},
+          // {
+          //   href: 'https://github.com/facebook/docusaurus',
+          //   label: 'GitHub',
+          //   position: 'right',
+          // },
         ],
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: '文档',
             items: [
               {
                 label: '笔记',
                 to: '/docs/hello',
+              },
+              {
+                label: '简历',
+                to: '/blog',
               },
             ],
           },

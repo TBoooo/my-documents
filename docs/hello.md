@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: -10
 ---
 
 # 简介
@@ -8,11 +8,11 @@ sidebar_position: 10
 
 ## 学习目标
 
-Spring源码
+* Spring源码
 
-Netty源码
+* Netty源码
 
-面试文档
+* 面试文档
 
 ### What you'll need
 
