@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Spring 流程图
+# Spring 流程图 MDX
 
 ## Refresh()
 > 这里是Spring启动的流程
@@ -106,13 +106,30 @@ public void refresh() throws BeansException, IllegalStateException {
 				// Propagate exception to caller.
 				throw ex;
 			}
-
 			finally {
 				// Reset common introspection caches in Spring's core, since we
 				// might not ever need metadata for singleton beans anymore...
 				resetCommonCaches();
+				<Highlight color="#25c2a0">resetCommonCaches();</Highlight>
 			}
 		}
 	}
 
 ```
+This is <Highlight color="#1002a0">Docusaurus green</Highlight> !
+
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '20px',
+      color: '#fff',
+      padding: '10px',
+      cursor: 'pointer',
+    }}
+    onClick={() => {
+      alert(`You clicked the color ${color} with label ${children}`);
+    }}>
+    {children}
+  </span>
+);
