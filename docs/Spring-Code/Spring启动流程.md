@@ -146,6 +146,8 @@ public void refresh() throws BeansException, IllegalStateException {
 
 ## invokeBeanFactoryPostProcessors(beanFactory)
 >
+* 实例化并调用所有已经注册BeanFactoryPostProcessor Bean
+* 如果存在loadTimeWeaver，则添加进beanFactory
 
 ## registerBeanPostProcessors(beanFactory)
 >
