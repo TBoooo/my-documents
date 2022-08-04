@@ -153,13 +153,13 @@ export const Highlight = ({children, color}) => (
       backgroundColor: color,
       borderRadius: '20px',
       color: '#fff',
-      padding: '2px',
+      padding: '5px',
       cursor: 'pointer',
     }}
-    onClick={() => {
-      alert(`You clicked the color ${color} with label ${children}`);
-      }}
-      >
-{/*     {children} */}
+//     onClick={() => {
+//       alert(`You clicked the color ${color} with label ${children}`);
+//     }}
+    >
+  {children}
   </span>
 );

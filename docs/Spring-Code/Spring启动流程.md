@@ -126,7 +126,7 @@ public void refresh() throws BeansException, IllegalStateException {
 * 注册依赖，如一个bean的属性中含有ApplicationEventPublisher(beanFactory)，则会将beanFactory的实例注入进去
 
 ## prepareBeanFactory(beanFactory)
->
+>Prepare the bean factory for use in this context.
 * 设置类加载器
 * 设置EL表达式解析器（Bean创建完成填充属性时使用）和属性注册解析器
 * 利用BeanPostProcessor的特性给各种Aware接口的实现类注入ApplicationContext中对应的属性
@@ -150,10 +150,16 @@ public void refresh() throws BeansException, IllegalStateException {
 * 如果存在loadTimeWeaver，则添加进beanFactory
 
 ## registerBeanPostProcessors(beanFactory)
->
+>Register bean processors that intercept bean creation.
+
+* 注册BeanPostProcessors
+* 
 
 ## initMessageSource()
->
+>Initialize message source for this context.
+
+* 初始化消息组件
+* 国际化支持
 
 ## initApplicationEventMulticaster()
 >
