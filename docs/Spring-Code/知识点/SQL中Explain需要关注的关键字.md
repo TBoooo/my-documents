@@ -12,7 +12,7 @@
 | filterd       |    filterd           | 符合查询条件的数据所占的比例 |
 | extra       |        extra       |额外信息                  |
 
-## ID
+## id
 该语句的唯一标识。如果explain的结果包括多个id值,则数字越大越先执行;而对于相同id的行,则表示从上往下依次执行。
 
 ## select_type
@@ -90,21 +90,25 @@ SELECT * FROM ref_table,other_table
 
 :::
 
-* fulltext: 全文索引
+* **fulltext**: 全文索引
 
-* ref_or_null: 该类型类似于ref,但是MySQL会额外搜索哪些行包含了NULL。这种类型常见于解析子查询
+* **ref_or_null**: 该类型类似于ref,但是MySQL会额外搜索哪些行包含了NULL。这种类型常见于解析子查询
+```sql
 SELECT * FROM ref_table
   WHERE key_column=expr OR key_column IS NULL;
-* index_merge: 此类型表示使用了索引合并优化,表示一个查询里面用到了多个索引
-* unique_subquery: 该类型和eq_ref类似,但是使用了IN查询,且子查询是主键或者唯一索引。例如: 
+```
+* **index_merge**: 此类型表示使用了索引合并优化,表示一个查询里面用到了多个索引
+* **unique_subquery**: 该类型和eq_ref类似,但是使用了IN查询,且子查询是主键或者唯一索引。例如: 
+```sql
 value IN (SELECT primary_key FROM single_table WHERE some_expr)
-* index_subquery: 和unique_subquery类似,只是子查询使用的是非唯一索引
+```
+* **index_subquery**: 和unique_subquery类似,只是子查询使用的是非唯一索引
 
 > ```sql
 value IN (SELECT key_column FROM single_table WHERE some_expr)
 ```
 
-* range: 范围扫描,表示检索了指定范围的行,主要用于有限制的索引扫描。比较常见的范围扫描是带有BETWEEN子句或WHERE子句里有>、>=、<、<=、IS NULL、<=>、BETWEEN、LIKE、IN()等操作符。
+* **range**: 范围扫描,表示检索了指定范围的行,主要用于有限制的索引扫描。比较常见的范围扫描是带有BETWEEN子句或WHERE子句里有>、>=、<、<=、IS NULL、<=>、BETWEEN、LIKE、IN()等操作符。
 
 > ```sql
 SELECT * FROM tbl_name
@@ -116,12 +120,12 @@ SELECT * FROM tbl_name
   WHERE key_column IN (10,20,30);
 ```
 
-* index: 全索引扫描,和ALL类似,只不过index是全盘扫描了索引的数据。当查询仅使用索引中的一部分列时,可使用此类型。有两种场景会触发: 
+* **index**: 全索引扫描,和ALL类似,只不过index是全盘扫描了索引的数据。当查询仅使用索引中的一部分列时,可使用此类型。有两种场景会触发: 
 如果索引是查询的覆盖索引,并且索引查询的数据就可以满足查询中所需的所有数据,则只扫描索引树。此时,explain的Extra 列的结果是Using index。index通常比ALL快,因为索引的大小通常小于表数据。
 按索引的顺序来查找数据行,执行了全表扫描。此时,explain的Extra列的结果不会出现Uses index。
 
 
-* ALL: 全表扫描,性能最差。
+* **ALL**: 全表扫描,性能最差。
 
 
 ## possible_keys
@@ -169,11 +173,11 @@ MySQL估算会扫描的行数,数值越小越好。
 
 :::
 
-## Extra
+## extra
 
 常用见的几种状态。
 
-1. Using filesort
+1. **Using filesort**
 > 这种情况是在使用 order by 关键字的时候,如果待排序的内容无法通过索引直接直接进行排序,mysql就有可能进行文件排序。
 > 当然不是说出现了此情况就会对sql语句的效率造成影响。但是由于查询次数过多的话,对于排序的效率还是有一定的影响的。
 > 可以通过设置 max_length_for_sort_data 来 提高 order by 的效率。如果操作的数据大小高于max_length_for_sort_data 的缓存大小时,mysql会产生临时表进行查询,一定程度上会印象效率。 max_length_for_sort_data的默认值是1024。
@@ -184,17 +188,17 @@ MySQL估算会扫描的行数,数值越小越好。
 设置索引,将带排序的内容放在索引中,直接利用索引进行排序
 
 :::
-2. Using index
+2. **Using index**
 > 使用索引,表示索引能够覆盖所有的查询字段,无需进行回表查询所以效率会高。大部分情况代表最优
 
-3. Using where 单独出现
+3. **Using where** 单独出现
 > 表示当前查询的字段不能被索引覆盖,所以可能会产生回表,效率比前者低
 
-4. Using where;Using index
+4. **Using where;Using index**
 > 表示查询的列被索引覆盖,且where筛选条件是索引列前导列的一个范围,或者是索引列的非前导列。 效率也比较高
 
-5. null
+5. **Null**
 > 表示查询的列未被索引覆盖,且where筛选条件是索引的前导列,这意味着用到了索引,但是部分字段未被索引覆盖,必须通过“回表查询”来实现,因而性能也比前两者差。
 
-6. Using index condition
+6. **Using index condition**
 > 表示查询条件中虽然出现了索引列,但是有部分条件无法使用索引,会根据能用索引的条件先搜索一遍再匹配无法使用索引的条件。 
