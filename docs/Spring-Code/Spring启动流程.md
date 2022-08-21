@@ -55,7 +55,7 @@ public void refresh() throws BeansException, IllegalStateException {
 
                 // Initialize message source for this context.
                 /**
-                 * 国际化支持，不关心
+                 * 国际化支持,不关心
                  */
                 initMessageSource();
 
@@ -110,7 +110,7 @@ public void refresh() throws BeansException, IllegalStateException {
 
 ```
 ## prepareRefresh()
-> 刷新上下文环境,初始化上下文环境，对系统的环境变量或者系统属性进行准备和校验
+> 刷新上下文环境,初始化上下文环境,对系统的环境变量或者系统属性进行准备和校验
 * 进行环境初始化
 * 记录启动时间
 * 校验xml配置
@@ -118,12 +118,12 @@ public void refresh() throws BeansException, IllegalStateException {
 
 ## ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory()
 >
-* 为上下文准备BeanFactory，即对BeanFactory的各种功能进行填充，如常用的注解@Autowired @Qualifier等
+* 为上下文准备BeanFactory,即对BeanFactory的各种功能进行填充,如常用的注解@Autowired @Qualifier等
 * 设置SPEL表达式#{key}的解析器
-* 设置资源编辑注册器，如PerpertyEditorSupper的支持
+* 设置资源编辑注册器,如PerpertyEditorSupper的支持
 * 添加ApplicationContextAwareProcessor处理器
-* 在依赖注入忽略实现*Aware的接口，如EnvironmentAware、ApplicationEventPublisherAware等
-* 注册依赖，如一个bean的属性中含有ApplicationEventPublisher(beanFactory)，则会将beanFactory的实例注入进去
+* 在依赖注入忽略实现*Aware的接口,如EnvironmentAware、ApplicationEventPublisherAware等
+* 注册依赖,如一个bean的属性中含有ApplicationEventPublisher(beanFactory),则会将beanFactory的实例注入进去
 
 ## prepareBeanFactory(beanFactory)
 >Prepare the bean factory for use in this context.
@@ -131,23 +131,23 @@ public void refresh() throws BeansException, IllegalStateException {
 * 设置EL表达式解析器（Bean创建完成填充属性时使用）和属性注册解析器
 * 利用BeanPostProcessor的特性给各种Aware接口的实现类注入ApplicationContext中对应的属性
 * 设置各种Aware接口的实现类为忽略自动装配
-* 设置自动装配的类（BeanFactory，ResourceLoader，ApplicationEventPublisher，ApplicationContext）
-* 如果BeanFactory中存在loadTimeWeaver的bean，那么需要添加动态织入功能
-* 注册各种可用组件（environment，systemProperties，systemEnvironment）
+* 设置自动装配的类（BeanFactory,ResourceLoader,ApplicationEventPublisher,ApplicationContext）
+* 如果BeanFactory中存在loadTimeWeaver的bean,那么需要添加动态织入功能
+* 注册各种可用组件（environment,systemProperties,systemEnvironment）
 
 ## postProcessBeanFactory(beanFactory)
 >
 * 首先调用context传入的BeanDefinitionRegistryPostProcessor接口
-* 调用Spring注入的BeanDefinitionRegistryPostProcessor接口（ConfigurationClassPostProcessor#postProcessBeanDefinitionRegistry => 包扫描，Import等）会添加到已执行的集合中
+* 调用Spring注入的BeanDefinitionRegistryPostProcessor接口（ConfigurationClassPostProcessor#postProcessBeanDefinitionRegistry => 包扫描,Import等）会添加到已执行的集合中
 * 调用扫描出来的BeanDefinitionRegistryPostProcessor接口实现类（分三个级别调用）会添加到已执行的集合中
 * 调用所有的BeanDefinitionRegistryPostProcessor接口的postProcessBeanFactory方法
 * 调用context.add手动注入的BeanFactoryPostProcessor接口的postProcessBeanFactory方法（不会添加到已执行集合中）
-* 最终获取容器中所有的BeanFactoryPostProcessor接口的实现类，逐一检查是否回调过，没有回调的根据优先级回调（context添加的BeanFactoryPostProcessor、spring扫描的BeanFactoryPostProcessor）
+* 最终获取容器中所有的BeanFactoryPostProcessor接口的实现类,逐一检查是否回调过,没有回调的根据优先级回调（context添加的BeanFactoryPostProcessor、spring扫描的BeanFactoryPostProcessor）
 
 ## invokeBeanFactoryPostProcessors(beanFactory)
 >
 * 实例化并调用所有已经注册BeanFactoryPostProcessor Bean
-* 如果存在loadTimeWeaver，则添加进beanFactory
+* 如果存在loadTimeWeaver,则添加进beanFactory
 
 ## registerBeanPostProcessors(beanFactory)
 >Register bean processors that intercept bean creation.

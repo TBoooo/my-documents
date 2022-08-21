@@ -4,12 +4,12 @@ sidebar_position: 2
 
 # BeanFactory 和 FactoryBean 的区别
 ## BeanFactory
-> BeanFactory是Spring IOC容器的顶层接口，定义了IOC容器的通用方法和规范。
+> BeanFactory是Spring IOC容器的顶层接口,定义了IOC容器的通用方法和规范。
 
 ## FactoryBean
-> * FactoryBean首先是一个Bean，但它又是一个能产生Bean的工厂，主要作用就是提供了一种灵活创建Bean的方式，让用户可以定制实例化Bean的逻辑。
-> * 获取普通Bean，getBean(BeanName)
-> * 获取工厂Bean，getBean("&"+BeanName)，前面加&。
-> * 比如AOP中的ProxyFactoryBean，模拟代理对象的逻辑
+> * FactoryBean首先是一个Bean,但它又是一个能产生Bean的工厂,主要作用就是提供了一种灵活创建Bean的方式,让用户可以定制实例化Bean的逻辑。
+> * 获取普通Bean,getBean(BeanName)
+> * 获取工厂Bean,getBean("&"+BeanName),前面加&。
+> * 比如AOP中的ProxyFactoryBean,模拟代理对象的逻辑
 
 <Highlight color="#1002a0">PerpertyEditorSupper</Highlight>
