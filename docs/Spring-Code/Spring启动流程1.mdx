@@ -127,12 +127,12 @@ public void refresh() throws BeansException, IllegalStateException {
 
 ## ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory()
 >
-* 为上下文准备BeanFactory，即对BeanFactory的各种功能进行填充，如常用的注解@Autowired @Qualifier等
+* 为上下文准备BeanFactory,即对BeanFactory的各种功能进行填充,如常用的注解@Autowired @Qualifier等
 * 设置SPEL表达式#{key}的解析器
 * 设置资源编辑注册器，如<Highlight color="#1002a0">PerpertyEditorSupper</Highlight>的支持
 * 添加ApplicationContextAwareProcessor处理器
-* 在依赖注入忽略实现*Aware的接口，如EnvironmentAware、ApplicationEventPublisherAware等
-* 注册依赖，如一个bean的属性中含有ApplicationEventPublisher(beanFactory)，则会将beanFactory的实例注入进去
+* 在依赖注入忽略实现*Aware的接口,如EnvironmentAware、ApplicationEventPublisherAware等
+* 注册依赖,如一个bean的属性中含有ApplicationEventPublisher(beanFactory),则会将beanFactory的实例注入进去
 
 ## prepareBeanFactory(beanFactory)
 ## postProcessBeanFactory(beanFactory)
