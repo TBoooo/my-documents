@@ -65,9 +65,9 @@ const config = {
                         type: 'doc',
                         docId: 'hello',
                         position: 'left',
-                        label: '笔记',
+                        label: 'Note',
                     },
-                    {to: '/blog', label: '简历', position: 'left'},
+                    {to: '/blog', label: 'resume', position: 'left'},
                     // {
                     //   href: 'https://github.com/facebook/docusaurus',
                     //   label: 'GitHub',
@@ -82,11 +82,11 @@ const config = {
                         title: '文档',
                         items: [
                             {
-                                label: '笔记',
+                                label: 'Note',
                                 to: '/docs/hello',
                             },
                             {
-                                label: '简历',
+                                label: 'resume',
                                 to: '/blog',
                             },
                         ],
