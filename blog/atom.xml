@@ -9,11 +9,11 @@
     <icon>https://your-docusaurus-test-site.com/my-documents/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[个人信息]]></title>
-        <id>个人简介</id>
+        <id>https://your-docusaurus-test-site.com/my-documents/blog/个人简介</id>
         <link href="https://your-docusaurus-test-site.com/my-documents/blog/个人简介"/>
         <updated>2022-07-30T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[擅长]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="擅长">擅长<a class="hash-link" href="#擅长" title="Direct link to heading">​</a></h2><blockquote><p>物联网开发、爬虫开发、应用开发</p></blockquote><ul><li>精通Java、熟练使用Golang、能用C语言进行开发</li><li>精通Spring源码，了解其中各个组件的原理</li><li>熟练使用关系型数据库、非关系型数据库</li><li>熟练使用Redis</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="擅长">擅长<a href="#擅长" class="hash-link" aria-label="Direct link to 擅长" title="Direct link to 擅长">​</a></h2><blockquote><p>物联网开发、爬虫开发、应用开发</p></blockquote><ul><li>精通Java、熟练使用Golang、能用C语言进行开发</li><li>精通Spring源码，了解其中各个组件的原理</li><li>熟练使用关系型数据库、非关系型数据库</li><li>熟练使用Redis</li></ul>]]></content>
         <author>
             <name>Yue Haibo</name>
             <uri>https://github.com/TBoooo</uri>
@@ -23,7 +23,7 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
-        <id>welcome</id>
+        <id>https://your-docusaurus-test-site.com/my-documents/blog/welcome</id>
         <link href="https://your-docusaurus-test-site.com/my-documents/blog/welcome"/>
         <updated>2021-08-26T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Docusaurus blogging features are powered by the blog plugin.]]></summary>
